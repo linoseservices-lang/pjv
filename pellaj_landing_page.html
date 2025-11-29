@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pellaj Ventures Limited | Tech Solutions Without Government Bottlenecks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-brown: #4B2C20;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E5E5E5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            max-width: 180px;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--dark-brown);
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            background-color: #c19d2f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(75, 44, 32, 0.8), rgba(75, 44, 32, 0.8)), url('https://i.postimg.cc/26Ls4sz4/futuristic-technology-concept.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero .cta-button {
+            background-color: var(--gold);
+            color: var(--dark-brown);
+            font-size: 1.1rem;
+            padding: 15px 30px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .service-card ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .service-card li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .service-card li:before {
+            content: "•";
+            color: var(--gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about h2 {
+            color: var(--dark-brown);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .about p {
+            margin-bottom: 20px;
+        }
+        
+        /* Partners Section */
+        .partners {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+        
+        .partners h3 {
+            color: var(--dark-brown);
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .partner-logo {
+            background-color: var(--white);
+            padding: 15px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--dark-brown);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .partner-logo img {
+            max-height: 50px;
+            max-width: 150px;
+            object-fit: contain;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background-color: var(--dark-brown);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-section .cta-button {
+            background-color: var(--gold);
+            color: var(--dark-brown);
+            font-size: 1.1rem;
+            padding: 15px 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .footer-contact h3,
+        .footer-social h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        
+        .social-icon img {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Lead Capture Form */
+        .lead-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .lead-form h3 {
+            color: var(--dark-brown);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .submit-button {
+            width: 100%;
+            background-color: var(--gold);
+            color: var(--dark-brown);
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: #c19d2f;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .partner-logos {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .lead-form {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .services, .about, .cta-section {
+                padding: 50px 0;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://i.postimg.cc/7hv4CHy2/Black-Modern-Finance-Logo.png" alt="Pellaj Ventures Limited Logo">
+            </div>
+            <a href="https://wa.link/d3mwyu" class="cta-button">Get Your Free Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Get Powerful Tech Solutions Without Government Bottlenecks</h1>
+            <p>We deliver software, strategy, and infrastructure that runs on-time, every time. No late delivery. No bloated platforms.</p>
+            <a href="https://wa.link/d3mwyu" class="cta-button">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Technology Solutions</h2>
+                <p>Digital transformation without the tech headache. We provide comprehensive solutions tailored to government agencies, public institutions, and SMEs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://i.postimg.cc/pr1L8P0R/african-american-woman-working-as-help-line-operator-industrial-facility.jpg" alt="Proprietary Software Development" class="service-image">
+                    <h3>Proprietary Software Development</h3>
+                    <ul>
+                        <li>Operations Management Systems</li>
+                        <li>HR & Payroll Automation Tools</li>
+                        <li>Accounting Platforms</li>
+                        <li>Case & Compliance Tools</li>
+                        <li>E-Government Platforms</li>
+                        <li>Citizen-Facing Mobile Apps</li>
+                    </ul>
+                    <p><strong>Features:</strong> Secure, scalable, cloud-ready, API-integrated</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://i.postimg.cc/gjkv9Wn1/coworkers-data-center-doing-brainstorming-implementing-ai.jpg" alt="Government Contracting" class="service-image">
+                    <h3>Government Contracting</h3>
+                    <ul>
+                        <li>ICT Infrastructure & Deployment</li>
+                        <li>Data Management & Admin Support</li>
+                        <li>Procurement & Training</li>
+                        <li>Compliance Tools</li>
+                    </ul>
+                    <p><strong>Benefits:</strong> Timely execution & regulation compliant</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://i.postimg.cc/8PzSg8y1/download-(4).jpg" alt="Technology Consulting" class="service-image">
+                    <h3>Technology Consulting</h3>
+                    <ul>
+                        <li>Digital Transformation Strategy</li>
+                        <li>Process Automation & MIS</li>
+                        <li>Software Selection</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <p><strong>Results:</strong> Streamlined operations and enhanced efficiency</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Pellaj Ventures Limited</h2>
+                <p>Founded in 2020, Pellaj Ventures Limited is a dynamic technology company based in Benin City, Edo State. As part of the Pellaj Empire Bakery Enterprise, we bring the same commitment to quality and reliability to the technology sector.</p>
+                <p>We specialize in providing innovative technology solutions to government agencies, public institutions, and SMEs. Our team of experts is dedicated to delivering projects on time and within budget, eliminating the frustrations often associated with technology implementations.</p>
+                <p>With a focus on digital transformation, we help our clients leverage technology to improve efficiency, enhance service delivery, and achieve their strategic objectives.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://i.postimg.cc/gjkv9Wn1/coworkers-data-center-doing-brainstorming-implementing-ai.jpg" alt="Pellaj Ventures Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h3>Trusted by Leading Organizations</h3>
+            <div class="partner-logos">
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/FRC4CD06/nddc-logo.webp" alt="NDDC">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/hPBByzmn/Federal-Ministry-of-Agriculture-Logo.webp" alt="Federal Ministry of Agriculture">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/FsV7DQY9/nimc.png" alt="NIMC">
+                </div>
+                <div class="partner-logo">Edo State Government</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Tech That Works? Let's Talk Today.</h2>
+            <p>Stop dealing with unreliable vendors and late delivery. Get technology solutions that deliver results on time, every time.</p>
+            <a href="https://wa.link/d3mwyu" class="cta-button">Get Your Free Quote</a>
+            
+            <!-- Lead Capture Form -->
+            <div class="lead-form">
+                <h3>Get a Free Consultation</h3>
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Organization</label>
+                        <input type="text" id="organization" name="organization" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="software">Software Development</option>
+                            <option value="contracting">Government Contracting</option>
+                            <option value="consulting">Technology Consulting</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-button">Request Free Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="https://i.postimg.cc/7hv4CHy2/Black-Modern-Finance-Logo.png" alt="Pellaj Ventures Limited Logo">
+                    </div>
+                    <p>Delivering innovative technology solutions since 2020.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +234-806-964-6617</p>
+                    <p>Email: <a href="mailto:info@pellajng.com" style="color: var(--gold);">info@pellajng.com</a></p>
+                    <p>Office: No. 7, Nobakhare Close, Off GRA Ihama Road, Benin City, Edo State.</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <img src="https://i.postimg.cc/QN48k3kK/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="https://i.postimg.cc/PqjTrrTJ/tik-tok.png" alt="TikTok">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Pellaj Ventures Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send this data to your server
+            // For demo purposes, we'll just show an alert
+            alert('Thank you for your interest! We will contact you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
